@@ -1,6 +1,6 @@
 <?php
 include("conexao.php");
-//eeeeeeeeee
+
 $ano = $_POST["ano"];
 $nome = $_POST["nome"];
 $genero = $_POST["genero"];
