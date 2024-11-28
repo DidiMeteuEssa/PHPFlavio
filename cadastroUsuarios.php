@@ -164,7 +164,7 @@ include("valida.php");
             <div class="menu-left">
                 <a href="principal.php" class="text-menu">Inicio</a><br>
                 <a class="text-menu" href="cadastroUsuarios.php">Cadastrar Usuario </a><br>
-                <a href="generos.php" class="text-menu">Generos</a><br>
+                <a href="generos.php" class="text-menu">Gêneros</a><br>
                 <a href="filmes.php" class="text-menu">Filmes</a><br>
                 <a href="#" class="text-menu">Lebron James</a><br>
             </div>

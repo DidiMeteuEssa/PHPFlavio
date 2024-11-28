@@ -167,7 +167,29 @@ include("valida.php");
     }
 </style>
 
+<script>
+    function validarGenero(){
+       const genero = document.getElementById("genero").value;
+       
+       if(genero == ''){
+            alert("Selecione um gênero!");
+            return false;
+       }
+    }
+    
+    function mensagem(){
+        alert("Filme deletado!");
+    }
 
+    function validarGeneroLista(){
+       const generoLista = document.getElementById("generoLista").value;
+       
+       if(generoLista == ''){
+            alert("Selecione um gênero!");
+            return false;
+       }
+    }
+</script>
 
 <body>
     <div class="main-container">
@@ -179,14 +201,14 @@ include("valida.php");
             <div class="menu-left">
                 <a href="principal.php" class="text-menu">Inicio</a><br>
                 <a class="text-menu" href="cadastroUsuarios.php">Cadastrar Usuario </a><br>
-                <a href="generos.php" class="text-menu">Generos</a><br>
+                <a href="generos.php" class="text-menu">Gêneros</a><br>
                 <a href="filmes.php" class="text-menu">Filmes</a><br>
                 <a href="#" class="text-menu">Lebron James</a><br>
             </div>
             <div class="menu-right">
 
 
-                <form method="post" action="cadastroFilmes.php">
+                <form method="post" action="cadastroFilmes.php" onsubmit="return validarGenero()">
                     <table class="form-table">
                         <tr>
                             <td><label for="ano">Ano:</label></td>
@@ -198,7 +220,7 @@ include("valida.php");
                         </tr>
                         <tr>
                             <td><label for="genero">Genero:</label></td>
-                            <td><select name="genero">
+                            <td><select name="genero" id="genero">
                                 <option value="">Selecione um Gênero</option>
                                 <?php
                                 include("conexao.php");
@@ -215,7 +237,7 @@ include("valida.php");
                             </select></td>
                         </tr>
                         <tr>
-                            <td colspan="2" style="text-align: center;"><button type="submit">Inserir</button></td>
+                            <td colspan="2" style="text-align: center;"><button  style="margin-top: 20px;" type="submit">Inserir</button></td>
                         </tr>
                     </table>
                 </form>

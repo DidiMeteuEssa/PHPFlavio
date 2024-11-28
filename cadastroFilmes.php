@@ -5,8 +5,16 @@ $ano = $_POST["ano"];
 $nome = $_POST["nome"];
 $genero = $_POST["genero"];
 
-if($genero == ""){
+if($genero == ''){
     die("Insira um gênero!");
+}
+
+if($nome == ''){
+    die("Insira o nome para o filme!");
+}
+
+if($ano == ''){
+    die("Insira o ano para o filme!");
 }
 
 $sql = "INSERT INTO `filmes` (`ano`, `nome`, `genero`) VALUES (?, ?, ?);";

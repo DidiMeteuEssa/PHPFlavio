@@ -78,11 +78,7 @@
     }
 </style>
 
-<script>
-    function mensagem(){
-        alert("Filme deletado!");
-    }
-</script>
+
 
 <?php
 
@@ -106,7 +102,7 @@ if (!$resultadoListar = $conn->query($sqlListar)) {
     </tr>
     <?php while ($rowListar = $resultadoListar->fetch_assoc()) { ?>
         <tr class="borda">
-            <form action="gerenciarFilme.php" method="post">
+            <form action="gerenciarFilme.php" method="post" onsubmit="return validarGeneroLista()">
                 <input type="hidden" name="idFilme" value="<?= $rowListar['id']; ?>">
                 <td class="itens2">
                     <input type="text" name="nome" value="<?= $rowListar['nome']; ?>">
@@ -115,7 +111,7 @@ if (!$resultadoListar = $conn->query($sqlListar)) {
                     <input type="text" name="ano" value="<?= $rowListar['ano']; ?>">
                 </td>
 
-                <td><select name="genero">
+                <td><select name="genero" id="generoLista">
                         <option value="">Selecione um Gênero</option>
                         <?php
                         include("conexao.php");

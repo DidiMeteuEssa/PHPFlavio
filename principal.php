@@ -53,6 +53,7 @@ include("valida.php");
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
     }
 
     .sair {
@@ -114,12 +115,13 @@ include("valida.php");
             <div class="menu-left">
                 <a href="principal.php" class="text-menu">Inicio</a><br>
                 <a class="text-menu" href="cadastroUsuarios.php">Cadastrar Usuario </a><br>
-                <a href="generos.php" class="text-menu">Generos</a><br>
+                <a href="generos.php" class="text-menu">Gêneros</a><br>
                 <a href="filmes.php" class="text-menu">Filmes</a><br>
                 <a href="#" class="text-menu">Lebron James</a><br>
             </div>
             <div class="menu-right">
-                <img src="https://www.brasil247.com/_next/image?url=https%3A%2F%2Fcdn.brasil247.com%2Fpb-b247gcp%2Fswp%2Fjtjeq9%2Fmedia%2F20240709050736_96a5a2864399666fa4f8a39fe970d12aafcc3cbbe29cb6948724792ce7268407.webp&w=3840&q=75" width="650px"  alt="">
+                ⎓ᔑ⨅ 𝙹 ꖎ
+                <img src="https://www.brasil247.com/_next/image?url=https%3A%2F%2Fcdn.brasil247.com%2Fpb-b247gcp%2Fswp%2Fjtjeq9%2Fmedia%2F20240709050736_96a5a2864399666fa4f8a39fe970d12aafcc3cbbe29cb6948724792ce7268407.webp&w=3840&q=75" width="650px" alt="">
             </div>
         </div>
     </div>

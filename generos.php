@@ -164,6 +164,33 @@ include("valida.php");
     }
 </style>
 
+<script>
+    
+    function validarCadastroGenero(){
+     
+       const nGenero = document.getElementById('nomeGenero').value;
+
+        if(nGenero == ''){
+            alert("Insira o nome do gênero");
+            return false;
+        }
+    }
+
+    function alterarStatus() {
+        const statusButton = document.getElementById('statusGenero');
+        const statusInput = document.getElementById('statusInput');
+
+        if (statusInput.value === "1") {
+            statusButton.innerHTML = "Desativado";
+            statusInput.value = "0";
+        } else {
+            statusButton.innerHTML = "Ativado";
+            statusInput.value = "1";
+        }
+    }
+
+</script>
+
 <body>
     <div class="main-container">
         <div class="cabecalho">
@@ -179,7 +206,7 @@ include("valida.php");
                 <a href="#" class="text-menu">Lebron James</a><br>
             </div>
             <div class="menu-right">
-                <form method="post" action="cadastrarGeneros.php">
+                <form method="post" action="cadastrarGeneros.php" onSubmit="return validarCadastroGenero();">
                     <table class="form-table">
                         <tr>
                             <td><label for="nomeGenero">Gênero:</label></td>
@@ -207,20 +234,7 @@ include("valida.php");
         </div>
     </div>
 
-    <script>
-    function alterarStatus() {
-        const statusButton = document.getElementById('statusGenero');
-        const statusInput = document.getElementById('statusInput');
-
-        if (statusInput.value === "1") {
-            statusButton.innerHTML = "Desativado";
-            statusInput.value = "0";
-        } else {
-            statusButton.innerHTML = "Ativado";
-            statusInput.value = "1";
-        }
-    }
-</script>
+   
 
 
 </body>
