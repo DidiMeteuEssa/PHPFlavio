@@ -9,7 +9,6 @@ if($genero == ''){
 }
 
 
-
 $sql = "INSERT INTO `generos` (`descricao`, `status`) VALUES (?, ?);";
 
 $stmt = $conn->prepare($sql);
