@@ -2,10 +2,10 @@
 <?php
 
 include("conexao.php");
-$nome = $_POST["nome"];
-$ano = $_POST["ano"];
-$genero = $_POST["genero"];
-$idFilme = $_POST["idFilme"];
+$nome = $_POST["nomeLista"];
+$ano = $_POST["anoLista"];
+$genero = $_POST["generoLista"];
+$idFilme = $_POST["idFilmeLista"];
 
 if($genero == ""){
     die("Insira um gênero!");

@@ -78,7 +78,30 @@
     }
 </style>
 
+<script>
+    function validarAlterarFilme(id){
+       const generoLista = document.getElementById("generoLista"+id).value;
+       const anoLista = document.getElementById("anoLista"+id).value;
+       const nomeLista = document.getElementById("nomeLista"+id).value;
 
+       if(nomeLista == ''){
+            alert("Digite o nome do filme!");
+            return false;
+       }
+       
+       if(anoLista == ''){
+            alert("Selecione o ano do filme!");
+            return false;
+       }
+
+       if(generoLista == ''){
+            alert("Selecione um gênero!");
+            return false;
+       }
+
+       return true;
+    }
+</script>
 
 <?php
 
@@ -102,16 +125,16 @@ if (!$resultadoListar = $conn->query($sqlListar)) {
     </tr>
     <?php while ($rowListar = $resultadoListar->fetch_assoc()) { ?>
         <tr class="borda">
-            <form action="gerenciarFilme.php" method="post" onsubmit="return validarGeneroLista()">
-                <input type="hidden" name="idFilme" value="<?= $rowListar['id']; ?>">
+            <form action="gerenciarFilme.php" method="post" onsubmit="return validarAlterarFilme('<?= $rowListar['id']; ?>')">
+                <input type="hidden" name="idFilmeLista" value="<?= $rowListar['id']; ?>">
                 <td class="itens2">
-                    <input type="text" name="nome" value="<?= $rowListar['nome']; ?>">
+                    <input type="text" id="nomeLista<?= $rowListar['id']; ?>" name="nomeLista" value="<?= $rowListar['nome']; ?>">
                 </td>
                 <td class="itens2">
-                    <input type="text" name="ano" value="<?= $rowListar['ano']; ?>">
+                    <input type="text" id="anoLista<?= $rowListar['id']; ?>" name="anoLista" value="<?= $rowListar['ano']; ?>">
                 </td>
 
-                <td><select name="genero" id="generoLista">
+                <td><select name="generoLista" id="generoLista<?= $rowListar['id']; ?>">
                         <option value="">Selecione um Gênero</option>
                         <?php
                         include("conexao.php");

@@ -135,7 +135,7 @@ include("valida.php");
         outline: none;
     }
 
-    button{
+    button {
         background-color: #0A0078;
         color: white;
         border: none;
@@ -149,33 +149,52 @@ include("valida.php");
         background-color: #0056b3;
     }
 
-    select{
+    select {
         width: calc(100% - 10px);
         padding: 8px;
-       
+
         border: 1px solid #ccc;
         border-radius: 4px;
         transition: border-color 0.3s;
     }
 
-    select:focus{
+    select:focus {
         border-color: #007BFF;
         outline: none;
     }
 </style>
 
 <script>
-    
-    function validarCadastroGenero(){
-     
-       const nGenero = document.getElementById('nomeGenero').value;
+    function validarCadastroGenero() {
 
-        if(nGenero == ''){
+        const nGenero = document.getElementById('nomeGenero').value;
+
+        if (nGenero == '') {
             alert("Insira o nome do gênero");
             return false;
         }
+
+        
     }
 
+    function validarAlterarGenero(id) {
+            const statusGen = document.getElementById("statusGeneroOpt"+id).value;;
+            const descricaoGen = document.getElementById("descricaoGen"+id).value;
+
+            if (descricaoGen == '') {
+                alert("Digite uma descricao!");
+                return false;
+            }
+            
+
+            if (statusGen == '') {
+                alert("Selecione um status!");
+                return false;
+            }
+
+            return true;
+        }
+    
     function alterarStatus() {
         const statusButton = document.getElementById('statusGenero');
         const statusInput = document.getElementById('statusInput');
@@ -188,7 +207,6 @@ include("valida.php");
             statusInput.value = "1";
         }
     }
-
 </script>
 
 <body>
@@ -220,9 +238,9 @@ include("valida.php");
                             </td>
 
                         </tr>
-                        
+
                         <tr>
-                            <td colspan="2"  style= "text-align: center;"><button type="submit" style="margin-top: 20px;">Enviar</button></td>
+                            <td colspan="2" style="text-align: center;"><button type="submit" style="margin-top: 20px;">Enviar</button></td>
                         </tr>
                     </table>
                 </form>
@@ -234,8 +252,9 @@ include("valida.php");
         </div>
     </div>
 
-   
+
 
 
 </body>
+
 </html>

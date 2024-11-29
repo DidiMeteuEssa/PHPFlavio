@@ -78,16 +78,7 @@
     }
 </style>
 
-<script>
-    function validarStatus(){
-       const status = document.getElementById("statusGeneroOpt").value;
 
-       if(status == ''){
-            alert("Selecione um status!");
-            return false;
-       }
-    }
-</script>
 
 <?php
 
@@ -108,12 +99,12 @@ if (!$resultado = $conn->query($sql)) {
     </tr>
     <?php while ($row = $resultado->fetch_assoc()) { ?>
         <tr class="borda">
-            <form action="gerenciarGeneros.php" method="post" onsubmit="return validarStatus()">
+            <form action="gerenciarGeneros.php" method="post" onsubmit="return validarAlterarGenero('<?= $row['id']; ?>')">
                 <input type="hidden" name="idGenero" value="<?= $row['id']; ?>">
                 <td class="itens2">
-                    <input type="text" name="descricao" value="<?= $row['descricao']; ?>">
+                    <input type="text" id="descricaoGen<?= $row['id']; ?>" name="descricao" value="<?= $row['descricao']; ?>">
                 </td>
-                <td><select name="statusGenero" id = "statusGeneroOpt">
+                <td><select name="statusGenero" id = "statusGeneroOpt<?= $row['id']; ?>">
                         <option value="">Selecione um Status</option>
                         <option value="1" <?= $row['status'] == 1 ? 'selected' : ''; ?>>Ligado</option>
                         <option value="2" <?= $row['status'] == 0 ? 'selected' : ''; ?>>Desligado</option>

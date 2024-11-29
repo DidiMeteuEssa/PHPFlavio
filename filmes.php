@@ -168,27 +168,33 @@ include("valida.php");
 </style>
 
 <script>
-    function validarGenero(){
+    function validarCadastroFilme(){
        const genero = document.getElementById("genero").value;
-       
+       const ano = document.getElementById("ano").value;
+       const nome = document.getElementById("nome").value;
+       if(ano == ''){
+            alert("Digite o ano do filme!");
+            return false;
+       }
+
+       if(nome == ''){
+            alert("Digite o nome do filme!");
+            return false;
+       }
+
        if(genero == ''){
             alert("Selecione um gênero!");
             return false;
        }
+
+       return true;
     }
     
     function mensagem(){
         alert("Filme deletado!");
     }
 
-    function validarGeneroLista(){
-       const generoLista = document.getElementById("generoLista").value;
-       
-       if(generoLista == ''){
-            alert("Selecione um gênero!");
-            return false;
-       }
-    }
+    
 </script>
 
 <body>
@@ -208,7 +214,7 @@ include("valida.php");
             <div class="menu-right">
 
 
-                <form method="post" action="cadastroFilmes.php" onsubmit="return validarGenero()">
+                <form method="post" action="cadastroFilmes.php" onsubmit="return validarCadastroFilme()">
                     <table class="form-table">
                         <tr>
                             <td><label for="ano">Ano:</label></td>
