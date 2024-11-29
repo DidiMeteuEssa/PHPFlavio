@@ -8,8 +8,6 @@ if($genero == ''){
     die("Insira o nome do gênero!");
 }
 
-//teste
-
 $sql = "INSERT INTO `generos` (`descricao`, `status`) VALUES (?, ?);";
 
 $stmt = $conn->prepare($sql);
