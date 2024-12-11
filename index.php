@@ -12,7 +12,7 @@
     }
 
     body {
-        background-image: url('https://img.freepik.com/vetores-gratis/selva-tropical-do-jogo-fundo-noite_105738-595.jpg?t=st=1726179691~exp=1726183291~hmac=b4fccb479d7ab70128b06b2d33f1a7ef5ce4304a0a22e73917fde53316822886&w=740');
+        background-image: url('https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
